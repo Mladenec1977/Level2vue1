@@ -1,6 +1,7 @@
 <template>
   <div class="board">
     <h2>{{ title }}</h2>
+    <h3>{{$route.params.board_id}}</h3>
     <div class="row">
       <List />
       <div>

@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
@@ -13,6 +12,14 @@ export default Vue.extend({
   name: 'Home',
   components: {
     HelloWorld,
+  },
+  computed: {
+    boards() {
+      return this.$store.state.getters.boards;
+    },
+  },
+  async mounted() {
+    await this.$store.dispatch('getBoards');
   },
 });
 </script>
