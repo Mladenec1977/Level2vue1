@@ -23,6 +23,10 @@ export default new Vuex.Store({
       const { data: { boards } } = await api.get('/board'); // не забудьте импортировать api!
       commit('UPDATE_BOARDS', boards);
     },
+    async getBoard({ commit }, { id }) {
+      const { data } = await api.get(`/board/${id}`);
+      commit('UPDATE_BOARD', data);
+    },
   },
   modules: {
   },
